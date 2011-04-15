@@ -35,4 +35,3 @@ foo = <<'single quotes'
 #{ENV['USER']}
 Notice the
 single quotes
-

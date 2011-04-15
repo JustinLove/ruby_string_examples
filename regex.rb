@@ -1,5 +1,7 @@
 /regex/
 
-/http:\/\/example.com\/obnoxious/
+/#{ENV['USER']}/
 
-%r(http://example.com/clean)
+/http:\/\/a.com\/b/
+
+%r(http://a.com/b)

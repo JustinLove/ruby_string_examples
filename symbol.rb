@@ -2,6 +2,6 @@
 
 :'symbol with spaces'
 
-:"symbol with #{Time.now}"
+:"symbol with #{ENV['USER']}"
 
 %s[you saw this coming, didn't you?]

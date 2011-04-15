@@ -13,7 +13,8 @@ class Wondible
     s.upcase
   end
 
-  alias_method :dsl, :instance_eval
+  alias_method :dsl,
+               :instance_eval
 end
 
 Wondible.new.dsl do
