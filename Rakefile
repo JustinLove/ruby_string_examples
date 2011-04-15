@@ -24,10 +24,22 @@ SPEC.each do |filename|
   end
 end
 
+def version(filename)
+  case filename
+  when /18/
+    'rvm use 1.8.7'
+  when /19/
+    'rvm use 1.9.2'
+  else
+    ''
+  end
+end
+
 rule '.txt' => '.rb' do |t|
   # IRBRC is to override an kink with RVM that
   #   blocks setting prompt from the command line
-  sh "IRBRC=irbrc irb #{t.prerequisites.join(' ')} >#{t.name}"
+  files = t.prerequisites.join(' ')
+  sh "IRBRC=irbrc #{version(files)} \"irb #{files}\" >#{t.name}"
   post_process(t.name)
 end
 
